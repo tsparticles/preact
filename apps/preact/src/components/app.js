@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { Router } from 'preact-router';
-import Particles from '@tsparticles/preact';
+import Particles from 'preact-particles';
 import Header from './header';
 import Home from '../routes/home';
 import Profile from '../routes/profile';

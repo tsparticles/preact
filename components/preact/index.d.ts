@@ -1,4 +1,4 @@
-// Type definitions for @tsparticles/preact
+// Type definitions for preact-particles
 // Project: https://github.com/matteobruni/tsparticles
 // Definitions by: Matteo Bruni <https://github.com/matteobruni>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
