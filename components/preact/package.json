@@ -19,7 +19,7 @@
         "prepack": "pnpm run build"
     },
     "repository": {
-        "url": "https://github.com/matteobruni/tsparticles",
+        "url": "https://github.com/tsparticles/preact",
         "directory": "components/preact",
         "type": "git"
     },
@@ -77,7 +77,7 @@
         "canvas-confetti"
     ],
     "bugs": {
-        "url": "https://github.com/matteobruni/tsparticles/issues"
+        "url": "https://github.com/tsparticles/preact/issues"
     },
     "author": "Matteo Bruni <matteo.bruni@me.com>",
     "license": "MIT",
