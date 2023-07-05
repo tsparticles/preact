@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -75,8 +79,8 @@ importers:
         specifier: ^3.4.3
         version: 3.4.3(eslint@8.34.0)(preact-render-to-string@6.0.0)(preact@10.11.3)(ts-node@10.9.1)
       prettier:
-        specifier: ^2.8.3
-        version: 2.8.4
+        specifier: ^3.0.0
+        version: 3.0.0
       sirv-cli:
         specifier: ^2.0.2
         version: 2.0.2
@@ -107,7 +111,7 @@ importers:
         version: 7.20.7
       '@tsparticles/prettier-config':
         specifier: ^1.6.0
-        version: 1.6.0(prettier@2.8.4)
+        version: 1.6.0(prettier@3.0.0)
       '@types/node':
         specifier: ^18.11.17
         version: 18.11.18
@@ -139,8 +143,8 @@ importers:
         specifier: ^10.11.3
         version: 10.11.3
       prettier:
-        specifier: ^2.8.3
-        version: 2.8.4
+        specifier: ^3.0.0
+        version: 3.0.0
       ts-loader:
         specifier: ^9.4.2
         version: 9.4.2(typescript@5.0.2)(webpack@5.75.0)
@@ -2963,12 +2967,12 @@ packages:
   /@tsconfig/node16@1.0.3:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
 
-  /@tsparticles/prettier-config@1.6.0(prettier@2.8.4):
+  /@tsparticles/prettier-config@1.6.0(prettier@3.0.0):
     resolution: {integrity: sha512-Aiyf98JUAFXUH7ndqHc4hF5AReTl1uj+Yiily+JV8Pvc5uFf7UC4jgmMdBSMc6Njqkhm2QE7BnbVwIytbeqnJA==}
     peerDependencies:
       prettier: ^2.8.3
     dependencies:
-      prettier: 2.8.4
+      prettier: 3.0.0
     dev: true
 
   /@types/body-parser@1.19.2:
@@ -11155,9 +11159,9 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /prettier@2.8.4:
-    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
-    engines: {node: '>=10.13.0'}
+  /prettier@3.0.0:
+    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
