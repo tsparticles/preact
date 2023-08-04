@@ -1,10 +1,10 @@
 import React, { Component } from "preact/compat";
 import type { ComponentChild } from "preact";
-import equal from "fast-deep-equal/react";
 import { tsParticles, Container } from "tsparticles-engine";
 import type { IParticlesProps } from "./IParticlesProps";
 import type { IParticlesState } from "./IParticlesState";
 import { MutableRefObject } from "react";
+import { deepCompare } from "./Utils";
 
 /**
  * @param {IParticlesProps}
@@ -40,7 +40,19 @@ export default class Particles extends Component<IParticlesProps, IParticlesStat
     }
 
     shouldComponentUpdate(nextProps: Readonly<IParticlesProps>, nextState: Readonly<IParticlesState>): boolean {
-        return this.state.init !== nextState.init || !equal(nextProps, this.props);
+        return (
+            nextState.init !== this.state.init ||
+            (nextProps.url !== this.props.url &&
+                nextProps.id !== this.props.id &&
+                nextProps.canvasClassName !== this.props.canvasClassName &&
+                nextProps.className !== this.props.className &&
+                nextProps.height !== this.props.height &&
+                nextProps.width !== this.props.width &&
+                !deepCompare(nextProps.style, this.props.style) &&
+                nextProps.init !== this.props.init &&
+                nextProps.loaded !== this.props.loaded &&
+                !deepCompare(nextProps.options ?? nextProps.params, this.props.options && this.props.params))
+        );
     }
 
     componentDidUpdate(): void {
@@ -65,7 +77,7 @@ export default class Particles extends Component<IParticlesProps, IParticlesStat
                 },
                 () => {
                     this.loadParticles();
-                }
+                },
             );
         })();
     }
