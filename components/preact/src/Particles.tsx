@@ -40,18 +40,36 @@ export default class Particles extends Component<IParticlesProps, IParticlesStat
     }
 
     shouldComponentUpdate(nextProps: Readonly<IParticlesProps>, nextState: Readonly<IParticlesState>): boolean {
+        console.log(
+            nextState.init !== this.state.init,
+            nextProps.url !== this.props.url,
+            nextProps.id !== this.props.id,
+            nextProps.canvasClassName !== this.props.canvasClassName,
+            nextProps.className !== this.props.className,
+            nextProps.height !== this.props.height,
+            nextProps.width !== this.props.width,
+            !deepCompare(nextProps.style, this.props.style),
+            nextProps.init !== this.props.init,
+            nextProps.loaded !== this.props.loaded,
+            !deepCompare(nextProps.options ?? nextProps.params, this.props.options ?? this.props.params, key =>
+                key.startsWith("_"),
+            ),
+        );
+
         return (
             nextState.init !== this.state.init ||
-            (nextProps.url !== this.props.url &&
-                nextProps.id !== this.props.id &&
-                nextProps.canvasClassName !== this.props.canvasClassName &&
-                nextProps.className !== this.props.className &&
-                nextProps.height !== this.props.height &&
-                nextProps.width !== this.props.width &&
-                !deepCompare(nextProps.style, this.props.style) &&
-                nextProps.init !== this.props.init &&
-                nextProps.loaded !== this.props.loaded &&
-                !deepCompare(nextProps.options ?? nextProps.params, this.props.options && this.props.params))
+            nextProps.url !== this.props.url ||
+            nextProps.id !== this.props.id ||
+            nextProps.canvasClassName !== this.props.canvasClassName ||
+            nextProps.className !== this.props.className ||
+            nextProps.height !== this.props.height ||
+            nextProps.width !== this.props.width ||
+            !deepCompare(nextProps.style, this.props.style) ||
+            nextProps.init !== this.props.init ||
+            nextProps.loaded !== this.props.loaded ||
+            !deepCompare(nextProps.options ?? nextProps.params, this.props.options ?? this.props.params, key =>
+                key.startsWith("_"),
+            )
         );
     }
 
