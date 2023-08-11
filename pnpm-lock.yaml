@@ -27,7 +27,7 @@ importers:
         specifier: ^10.16.0
         version: 10.16.0
       preact-particles:
-        specifier: ^2.12.0
+        specifier: ^2.12.1
         version: link:../../components/preact
       preact-render-to-string:
         specifier: ^6.2.0
