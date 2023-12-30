@@ -83,6 +83,9 @@
   "license": "MIT",
   "homepage": "https://particles.js.org",
   "prettier": "@tsparticles/prettier-config",
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "preact": "^10.19.3"
   },
