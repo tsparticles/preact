@@ -1,10 +1,11 @@
-import React, { Component } from "preact/compat";
-import type { ComponentChild } from "preact";
-import { tsParticles, Container } from "tsparticles-engine";
+import { Component } from "preact/compat";
+import { ComponentChild } from "preact";
+import { tsParticles, Container } from "@tsparticles/engine";
 import type { IParticlesProps } from "./IParticlesProps";
 import type { IParticlesState } from "./IParticlesState";
 import { MutableRefObject } from "react";
 import { deepCompare } from "./Utils";
+import React from "preact/compat";
 
 /**
  * @param {IParticlesProps}
@@ -49,8 +50,7 @@ export default class Particles extends Component<IParticlesProps, IParticlesStat
             nextProps.height !== this.props.height,
             nextProps.width !== this.props.width,
             !deepCompare(nextProps.style, this.props.style),
-            nextProps.init !== this.props.init,
-            nextProps.loaded !== this.props.loaded,
+            nextProps.particlesLoaded !== this.props.particlesLoaded,
             !deepCompare(nextProps.options ?? nextProps.params, this.props.options ?? this.props.params, key =>
                 key.startsWith("_"),
             ),
@@ -65,8 +65,7 @@ export default class Particles extends Component<IParticlesProps, IParticlesStat
             nextProps.height !== this.props.height ||
             nextProps.width !== this.props.width ||
             !deepCompare(nextProps.style, this.props.style) ||
-            nextProps.init !== this.props.init ||
-            nextProps.loaded !== this.props.loaded ||
+            nextProps.particlesLoaded !== this.props.particlesLoaded ||
             !deepCompare(nextProps.options ?? nextProps.params, this.props.options ?? this.props.params, key =>
                 key.startsWith("_"),
             )
@@ -84,20 +83,14 @@ export default class Particles extends Component<IParticlesProps, IParticlesStat
     }
 
     componentDidMount(): void {
-        (async () => {
-            if (this.props.init) {
-                await this.props.init(tsParticles);
-            }
-
-            this.setState(
-                {
-                    init: true,
-                },
-                () => {
-                    this.loadParticles();
-                },
-            );
-        })();
+        this.setState(
+            {
+                init: true,
+            },
+            () => {
+                void this.loadParticles();
+            },
+        );
     }
 
     componentWillUnmount(): void {
@@ -141,14 +134,16 @@ export default class Particles extends Component<IParticlesProps, IParticlesStat
                 library: container,
             });
 
-            if (this.props.loaded) {
-                await this.props.loaded(container);
+            if (this.props.particlesLoaded) {
+                await this.props.particlesLoaded(container);
             }
         };
 
-        const container = await (this.props.url
-            ? tsParticles.loadJSON(this.props.id, this.props.url)
-            : tsParticles.load(this.props.id, this.props.params ?? this.props.options));
+        const container = await tsParticles.load({
+            url: this.props.url,
+            options: this.props.options,
+            id: this.props.id,
+        });
 
         await cb(container);
     }

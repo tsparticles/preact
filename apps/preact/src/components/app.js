@@ -1,11 +1,11 @@
 import { Component } from "preact";
 import { Router } from "preact-router";
-import Particles from "preact-particles";
+import Particles, { initParticlesEngine } from "@tsparticles/preact";
 import Header from "./header";
 import Home from "../routes/home";
 import Profile from "../routes/profile";
 import { loadFull } from "tsparticles";
-import configs from "tsparticles-demo-configs";
+import configs from "@tsparticles/configs";
 
 export default class App extends Component {
     key = "basic";
@@ -16,6 +16,7 @@ export default class App extends Component {
 
     state = {
         key: this.key,
+        particlesInitialized: false
     };
 
     handleRoute = e => {
@@ -23,26 +24,31 @@ export default class App extends Component {
     };
 
     switchFrame = (key) => {
-        console.log("switch frame", key);
-
         this.setState({
             ...this.state,
             key,
         }, () => {
-            console.log("hash", `#${key}`);
-
             document.location.hash = `#${key}`;
         });
     };
 
-    async particlesInit(main) {
-        await loadFull(main);
+    constructor() {
+        super();
+
+        void initParticlesEngine(async (engine) => {
+            await loadFull(engine);
+        }).then(() => {
+            this.setState({
+                ...this.state,
+                particlesInitialized: true
+            });
+        });
     }
 
     render() {
         return (
             <div id="app">
-                <Header />
+                <Header/>
                 <div style="position: absolute; top: 50%; right: 10px; z-index: 3000;">
                     <div>
                         <button onClick={() => {
@@ -57,12 +63,12 @@ export default class App extends Component {
                         </button>
                     </div>
                 </div>
-                <Particles id="tsparticles" options={this.options[this.state.key]}
-                           init={this.particlesInit.bind(this)} />
+                {this.state.particlesInitialized &&
+                    <Particles id="tsparticles" options={this.options[this.state.key]}/>}
                 <Router onChange={this.handleRoute}>
-                    <Home path="/" />
-                    <Profile path="/profile/" user="me" />
-                    <Profile path="/profile/:user" />
+                    <Home path="/"/>
+                    <Profile path="/profile/" user="me"/>
+                    <Profile path="/profile/:user"/>
                 </Router>
             </div>
         );
