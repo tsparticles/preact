@@ -1,8 +1,8 @@
 [![banner](https://particles.js.org/images/banner3.png)](https://particles.js.org)
 
-# preact-particles
+# @tsparticles/preact
 
-[![npm](https://img.shields.io/npm/v/preact-particles)](https://www.npmjs.com/package/preact-particles) [![npm](https://img.shields.io/npm/dm/preact-particles)](https://www.npmjs.com/package/preact-particles) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
+[![npm](https://img.shields.io/npm/v/@tsparticles/preact)](https://www.npmjs.com/package/@tsparticles/preact) [![npm](https://img.shields.io/npm/dm/@tsparticles/preact)](https://www.npmjs.com/package/@tsparticles/preact) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
 
 Official [tsParticles](https://github.com/matteobruni/tsparticles) Preact component
 
@@ -13,13 +13,13 @@ Official [tsParticles](https://github.com/matteobruni/tsparticles) Preact compon
 ## Installation
 
 ```shell
-npm install preact-particles
+npm install @tsparticles/preact
 ```
 
 or
 
 ```shell
-yarn add preact-particles
+yarn add @tsparticles/preact
 ```
 
 ## How to use
@@ -31,24 +31,29 @@ Examples:
 _Remote url_
 
 ```javascript
-import Particles from "preact-particles";
+import Particles, { initParticlesEngine } from "@tsparticles/preact";
 import { loadFull } from "tsparticles";
 
 class App extends Component {
+    state = {
+        particlesInitialized: false,
+    };
+
     constructor(props) {
         super(props);
 
-        this.particlesInit = this.particlesInit.bind(this);
         this.particlesLoaded = this.particlesLoaded.bind(this);
-    }
 
-    particlesInit(main) {
-        console.log(main);
-
-        // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        loadFull(main);
+        initParticlesEngine(async engine => {
+            // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
+            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+            // starting from v2 you can add only the features you need reducing the bundle size
+            await loadFull(engine);
+        }).then(() => {
+            this.setState({
+                particlesInitialized: true,
+            });
+        });
     }
 
     particlesLoaded(container) {
@@ -56,13 +61,12 @@ class App extends Component {
     }
 
     render() {
+        if (!this.state.particlesInitialized) {
+            return null;
+        }
+
         return (
-            <Particles
-                id="tsparticles"
-                url="http://foo.bar/particles.json"
-                init={this.particlesInit}
-                loaded={this.particlesLoaded}
-            />
+            <Particles id="tsparticles" url="http://foo.bar/particles.json" particlesLoaded={this.particlesLoaded} />
         );
     }
 }
@@ -71,24 +75,29 @@ class App extends Component {
 _Options object_
 
 ```javascript
-import Particles from "preact-particles";
+import Particles from "@tsparticles/preact";
 import { loadFull } from "tsparticles";
 
 class App extends Component {
+    state = {
+        particlesInitialized: false,
+    };
+
     constructor(props) {
         super(props);
 
-        this.particlesInit = this.particlesInit.bind(this);
         this.particlesLoaded = this.particlesLoaded.bind(this);
-    }
 
-    particlesInit(main) {
-        console.log(main);
-
-        // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        loadFull(main);
+        initParticlesEngine(async engine => {
+            // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
+            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+            // starting from v2 you can add only the features you need reducing the bundle size
+            await loadFull(engine);
+        }).then(() => {
+            this.setState({
+                particlesInitialized: true,
+            });
+        });
     }
 
     particlesLoaded(container) {
@@ -96,11 +105,14 @@ class App extends Component {
     }
 
     render() {
+        if (!this.state.particlesInitialized) {
+            return null;
+        }
+
         return (
             <Particles
                 id="tsparticles"
-                init={this.particlesInit}
-                loaded={this.particlesLoaded}
+                particlesLoaded={this.particlesLoaded}
                 options={{
                     background: {
                         color: {
@@ -178,19 +190,18 @@ class App extends Component {
 
 ### Props
 
-| Prop            | Type     | Definition                                                                                                                                          |
-| --------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id              | string   | The id of the element.                                                                                                                              |
-| width           | string   | The width of the canvas.                                                                                                                            |
-| height          | string   | The height of the canvas.                                                                                                                           |
-| options         | object   | The options of the particles instance.                                                                                                              |
-| url             | string   | The remote options url, called using an AJAX request                                                                                                |
-| style           | object   | The style of the canvas element.                                                                                                                    |
-| className       | string   | The class name of the canvas wrapper.                                                                                                               |
-| canvasClassName | string   | the class name of the canvas.                                                                                                                       |
-| container       | object   | The instance of the [particles container](https://particles.js.org/docs/modules/Core_Container.html)                                                |
-| init            | function | This function is called after the tsParticles instance initialization, the instance is the parameter and you can load custom presets or shapes here |
-| loaded          | function | This function is called when particles are correctly loaded in canvas, the current container is the parameter and you can customize it here         |
+| Prop            | Type     | Definition                                                                                                                                  |
+| --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| id              | string   | The id of the element.                                                                                                                      |
+| width           | string   | The width of the canvas.                                                                                                                    |
+| height          | string   | The height of the canvas.                                                                                                                   |
+| options         | object   | The options of the particles instance.                                                                                                      |
+| url             | string   | The remote options url, called using an AJAX request                                                                                        |
+| style           | object   | The style of the canvas element.                                                                                                            |
+| className       | string   | The class name of the canvas wrapper.                                                                                                       |
+| canvasClassName | string   | the class name of the canvas.                                                                                                               |
+| container       | object   | The instance of the [particles container](https://particles.js.org/docs/modules/Core_Container.html)                                        |
+| particlesLoaded | function | This function is called when particles are correctly loaded in canvas, the current container is the parameter and you can customize it here |
 
 Find your parameters configuration [here](https://particles.js.org).
 
