@@ -1,3 +1,6 @@
 packages:
   - 'apps/*'
   - 'components/*'
+allowBuilds:
+  '@tsparticles/engine': true
+  nx: true
