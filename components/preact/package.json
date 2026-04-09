@@ -87,10 +87,11 @@
     "access": "public"
   },
   "peerDependencies": {
-    "preact": "^10.19.3"
+    "@tsparticles/engine": ">=3 <5",
+    "preact": ">=10.5.0 <11"
   },
   "dependencies": {
-    "@tsparticles/engine": "^3.0.3"
+    "@tsparticles/engine": "^4.0.0-beta.11"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
