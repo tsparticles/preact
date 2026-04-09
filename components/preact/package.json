@@ -88,10 +88,10 @@
   },
   "peerDependencies": {
     "@tsparticles/engine": ">=3 <5",
-    "preact": ">=10.5.0 <11"
+    "preact": ">=10.5.0 <12"
   },
   "dependencies": {
-    "@tsparticles/engine": "^4.0.0-beta.11"
+    "@tsparticles/engine": "^3.9.1"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",

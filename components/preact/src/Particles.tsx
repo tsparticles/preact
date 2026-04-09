@@ -3,9 +3,7 @@ import { ComponentChild } from "preact";
 import { tsParticles, Container } from "@tsparticles/engine";
 import type { IParticlesProps } from "./IParticlesProps";
 import type { IParticlesState } from "./IParticlesState";
-import { MutableRefObject } from "react";
 import { deepCompare } from "./Utils";
-import React from "preact/compat";
 
 /**
  * @param {IParticlesProps}
@@ -41,21 +39,6 @@ export default class Particles extends Component<IParticlesProps, IParticlesStat
     }
 
     shouldComponentUpdate(nextProps: Readonly<IParticlesProps>, nextState: Readonly<IParticlesState>): boolean {
-        console.log(
-            nextState.init !== this.state.init,
-            nextProps.url !== this.props.url,
-            nextProps.id !== this.props.id,
-            nextProps.canvasClassName !== this.props.canvasClassName,
-            nextProps.className !== this.props.className,
-            nextProps.height !== this.props.height,
-            nextProps.width !== this.props.width,
-            !deepCompare(nextProps.style, this.props.style),
-            nextProps.particlesLoaded !== this.props.particlesLoaded,
-            !deepCompare(nextProps.options ?? nextProps.params, this.props.options ?? this.props.params, key =>
-                key.startsWith("_"),
-            ),
-        );
-
         return (
             nextState.init !== this.state.init ||
             nextProps.url !== this.props.url ||
@@ -127,7 +110,7 @@ export default class Particles extends Component<IParticlesProps, IParticlesStat
 
         const cb = async (container?: Container) => {
             if (this.props.container) {
-                (this.props.container as MutableRefObject<Container>).current = container;
+                this.props.container.current = container;
             }
 
             this.setState({

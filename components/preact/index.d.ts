@@ -3,8 +3,7 @@
 // Definitions by: Matteo Bruni <https://github.com/matteobruni>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-import type { ComponentClass } from "react";
-import { CSSProperties, RefObject } from "react";
+import type { ComponentClass, JSX } from "preact";
 import type { Container, Engine, ISourceOptions } from "@tsparticles/engine";
 
 export interface IParticlesProps {
@@ -14,10 +13,10 @@ export interface IParticlesProps {
     options?: ISourceOptions;
     url?: string;
     params?: ISourceOptions;
-    style?: CSSProperties;
+    style?: JSX.CSSProperties;
     className?: string;
     canvasClassName?: string;
-    container?: RefObject<Container>;
+    container?: { current?: Container | undefined };
     particlesLoaded?: (container: Container) => Promise<void>;
 }
 
