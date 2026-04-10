@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "cli run build:ci --stream --no-private",
+    "startTime": "2026-04-09T19:52:57.941Z",
+    "endTime": "2026-04-09T19:53:09.333Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "@tsparticles/preact:build:ci",
+      "target": "build:ci",
+      "projectName": "@tsparticles/preact",
+      "hash": "927384158202750708",
+      "startTime": "2026-04-09T19:52:57.959Z",
+      "endTime": "2026-04-09T19:53:09.331Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}

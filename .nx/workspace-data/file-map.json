@@ -1,0 +1,290 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.8.4",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "pnpm-workspace.yaml",
+        "hash": "16449812993635309209"
+      },
+      {
+        "file": "renovate.json",
+        "hash": "15495251679673267221"
+      },
+      {
+        "file": ".github/FUNDING.yml",
+        "hash": "2320204612366203624"
+      },
+      {
+        "file": ".github/workflows/nodejs.yml",
+        "hash": "8302730463656114257"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "4847204773326325000"
+      },
+      {
+        "file": ".husky/.gitignore",
+        "hash": "4575667007673887251"
+      },
+      {
+        "file": "lerna.json",
+        "hash": "2788240290453750718"
+      },
+      {
+        "file": ".husky/commit-msg",
+        "hash": "13890091524433070441"
+      },
+      {
+        "file": "nx.json",
+        "hash": "93868292560654171"
+      },
+      {
+        "file": "LICENSE",
+        "hash": "14361870659202179179"
+      },
+      {
+        "file": "CHANGELOG.md",
+        "hash": "2305659404171927929"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "10737288862417876981"
+      },
+      {
+        "file": "README.md",
+        "hash": "12995906690145874690"
+      },
+      {
+        "file": "package.json",
+        "hash": "6019812759390736678"
+      }
+    ],
+    "projectFileMap": {
+      "@tsparticles/preact-demo": [
+        {
+          "file": "apps/preact/.babelrc",
+          "hash": "9935485842449378585"
+        },
+        {
+          "file": "apps/preact/CHANGELOG.md",
+          "hash": "13701178720350363638"
+        },
+        {
+          "file": "apps/preact/README.md",
+          "hash": "11042793322184486499"
+        },
+        {
+          "file": "apps/preact/package.json",
+          "hash": "6036389387893820002",
+          "deps": [
+            "npm:@typescript-eslint/eslint-plugin",
+            "npm:@typescript-eslint/parser",
+            "npm:copyfiles",
+            "npm:enzyme",
+            "npm:enzyme-adapter-preact-pure",
+            "npm:eslint",
+            "npm:eslint-config-preact",
+            "npm:eslint-config-prettier",
+            "npm:eslint-plugin-react-hooks",
+            "npm:identity-obj-proxy",
+            "npm:preact-cli",
+            "npm:prettier",
+            "npm:sirv-cli",
+            "npm:typescript",
+            "npm:@tsparticles/configs",
+            "npm:@tsparticles/engine",
+            "@tsparticles/preact",
+            "npm:preact",
+            "npm:preact-render-to-string",
+            "npm:preact-router",
+            "npm:tsparticles"
+          ]
+        },
+        {
+          "file": "apps/preact/src/assets/favicon.ico",
+          "hash": "9521161329943765429"
+        },
+        {
+          "file": "apps/preact/src/assets/icons/android-chrome-192x192.png",
+          "hash": "9902281844735439119"
+        },
+        {
+          "file": "apps/preact/src/assets/icons/android-chrome-512x512.png",
+          "hash": "4363220497859195420"
+        },
+        {
+          "file": "apps/preact/src/assets/icons/apple-touch-icon.png",
+          "hash": "16531392248264328372"
+        },
+        {
+          "file": "apps/preact/src/assets/icons/favicon-16x16.png",
+          "hash": "5060283548148086459"
+        },
+        {
+          "file": "apps/preact/src/assets/icons/favicon-32x32.png",
+          "hash": "1192729431757808163"
+        },
+        {
+          "file": "apps/preact/src/assets/icons/mstile-150x150.png",
+          "hash": "12578834474665709928"
+        },
+        {
+          "file": "apps/preact/src/components/app.js",
+          "hash": "7519774486214944207"
+        },
+        {
+          "file": "apps/preact/src/components/header/index.js",
+          "hash": "5090434219063737769"
+        },
+        {
+          "file": "apps/preact/src/components/header/style.css",
+          "hash": "16692243939212541696"
+        },
+        {
+          "file": "apps/preact/src/index.js",
+          "hash": "17151633268279380736"
+        },
+        {
+          "file": "apps/preact/src/manifest.json",
+          "hash": "4855118703851000529"
+        },
+        {
+          "file": "apps/preact/src/routes/home/index.js",
+          "hash": "10482349269162598183"
+        },
+        {
+          "file": "apps/preact/src/routes/home/style.css",
+          "hash": "12208968847706125464"
+        },
+        {
+          "file": "apps/preact/src/routes/profile/index.js",
+          "hash": "12930644132376244778"
+        },
+        {
+          "file": "apps/preact/src/routes/profile/style.css",
+          "hash": "12894185114690558696"
+        },
+        {
+          "file": "apps/preact/src/style/index.css",
+          "hash": "8050353131520788932"
+        }
+      ],
+      "@tsparticles/preact": [
+        {
+          "file": "components/preact/.eslintignore",
+          "hash": "17030786317414706557"
+        },
+        {
+          "file": "components/preact/.eslintrc.js",
+          "hash": "10826143361725950632"
+        },
+        {
+          "file": "components/preact/.gitignore",
+          "hash": "18245004067309727996"
+        },
+        {
+          "file": "components/preact/.npmignore",
+          "hash": "6646895127813339857"
+        },
+        {
+          "file": "components/preact/.prettierrc",
+          "hash": "5026201353467209275"
+        },
+        {
+          "file": "components/preact/CHANGELOG.md",
+          "hash": "5346653801444404919"
+        },
+        {
+          "file": "components/preact/HOOKS_PATTERN.md",
+          "hash": "7211837548255262616"
+        },
+        {
+          "file": "components/preact/LICENSE",
+          "hash": "14361870659202179179"
+        },
+        {
+          "file": "components/preact/README.md",
+          "hash": "12995906690145874690"
+        },
+        {
+          "file": "components/preact/index.d.ts",
+          "hash": "1116095180286919685"
+        },
+        {
+          "file": "components/preact/index.js",
+          "hash": "7619291544452898541"
+        },
+        {
+          "file": "components/preact/package.json",
+          "hash": "8825211593774421609",
+          "deps": [
+            "npm:@tsparticles/engine",
+            "npm:preact",
+            "npm:@babel/core",
+            "npm:@babel/plugin-transform-runtime",
+            "npm:@babel/preset-env",
+            "npm:@babel/runtime",
+            "npm:@tsparticles/prettier-config",
+            "npm:@types/node",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:@typescript-eslint/eslint-plugin",
+            "npm:@typescript-eslint/parser",
+            "npm:babel-loader@9.2.1",
+            "npm:cross-env",
+            "npm:eslint",
+            "npm:eslint-config-prettier",
+            "npm:prettier",
+            "npm:prettier-plugin-multiline-arrays",
+            "npm:ts-loader",
+            "npm:ts-node",
+            "npm:typescript",
+            "npm:webpack@5.106.0",
+            "npm:webpack-bundle-analyzer",
+            "npm:webpack-cli",
+            "npm:webpack-node-externals"
+          ]
+        },
+        {
+          "file": "components/preact/src/IParticlesProps.ts",
+          "hash": "16635736635969639080"
+        },
+        {
+          "file": "components/preact/src/IParticlesState.ts",
+          "hash": "10074596586546775854"
+        },
+        {
+          "file": "components/preact/src/Particles.tsx",
+          "hash": "1219052660405933385"
+        },
+        {
+          "file": "components/preact/src/Utils.ts",
+          "hash": "13630060551891928438"
+        },
+        {
+          "file": "components/preact/src/index.ts",
+          "hash": "16390620047957352631"
+        },
+        {
+          "file": "components/preact/src/lib/ParticlesProvider.tsx",
+          "hash": "14461386366441875401"
+        },
+        {
+          "file": "components/preact/tsconfig.json",
+          "hash": "10790352040215387206"
+        },
+        {
+          "file": "components/preact/typedoc.json",
+          "hash": "13727249761824254356"
+        },
+        {
+          "file": "components/preact/webpack.config.js",
+          "hash": "6268883760686676235"
+        }
+      ]
+    }
+  }
+}

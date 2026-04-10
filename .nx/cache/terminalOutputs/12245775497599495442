@@ -1,0 +1,18 @@
+
+> @tsparticles/preact@3.0.0 build C:\Projects\GitHub\preact\components\preact
+> pnpm run prettify:src && pnpm run lint && cross-env NODE_ENV=production webpack && pnpm run prettify:readme
+
+
+> @tsparticles/preact@3.0.0 prettify:src C:\Projects\GitHub\preact\components\preact
+> prettier --write ./src/*
+
+src/index.ts 51ms
+src/IParticlesProps.ts 16ms
+src/IParticlesState.ts 3ms
+src/Particles.tsx 59ms
+src/Utils.ts 22ms
+
+> @tsparticles/preact@3.0.0 lint C:\Projects\GitHub\preact\components\preact
+> eslint src --ext .js,.jsx,.ts,.tsx --fix
+
+^C[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 3221225786.[39m

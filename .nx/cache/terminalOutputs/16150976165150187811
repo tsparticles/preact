@@ -1,0 +1,90 @@
+
+> @tsparticles/preact@3.0.0 build:ci C:\Projects\GitHub\preact\components\preact
+> pnpm run prettify:ci:src && pnpm run lint:ci && cross-env NODE_ENV=production webpack && pnpm run prettify:ci:readme
+
+
+> @tsparticles/preact@3.0.0 prettify:ci:src C:\Projects\GitHub\preact\components\preact
+> prettier --check ./src/*
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> @tsparticles/preact@3.0.0 lint:ci C:\Projects\GitHub\preact\components\preact
+> eslint src --ext .js,.jsx,.ts,.tsx
+
+Error parsing bundle asset "C:\Projects\GitHub\preact\components\preact\umd\particles.js": no such file
+
+No bundles were parsed. Analyzer will show only original module sizes from stats file.
+
+[1mWebpack Bundle Analyzer[22m saved report to [1mC:\Projects\GitHub\preact\components\preact\report.html[22m
+Error parsing bundle asset "C:\Projects\GitHub\preact\components\preact\umd\particles.js": no such file
+
+No bundles were parsed. Analyzer will show only original module sizes from stats file.
+
+[1mWebpack Bundle Analyzer[22m saved report to [1mC:\Projects\GitHub\preact\components\preact\report.html[22m
+assets by status 13.8 KiB [1m[32m[cached][39m[22m 1 asset
+orphan modules 14.4 KiB [1m[33m[orphan][39m[22m 16 modules
+runtime modules 937 bytes 4 modules
+built modules 26.5 KiB [1m[33m[built][39m[22m
+  modules by path [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtim...(truncated)[39m[22m 10.3 KiB
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 2.46 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 170 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 3.73 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 352 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 367 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 1.07 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 349 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 638 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    + 2 modules
+  [1m./src/index.ts + 16 modules[39m[22m 15.8 KiB [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/regen...(truncated)[39m[22m 448 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+
+[1m[31mERROR[39m[22m in [1mC:\Projects\GitHub\preact\components\preact\src\Particles.tsx[39m[22m
+[1m./src/Particles.tsx[39m[22m [1m[32m87:13-16[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m[1m[31m in [39m[22m[1m[36mC:\Projects\GitHub\preact\components\preact\src\Particles.tsx(87,14)[39m[22m
+[1m[31m      TS2686: 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.[39m[22m
+ts-loader-default_e3b0c44298fc1c14
+ @ ./src/index.ts 29:0-36 46:15-24 47:0-42
+
+[1m[31mERROR[39m[22m in [1mC:\Projects\GitHub\preact\components\preact\src\Particles.tsx[39m[22m
+[1m./src/Particles.tsx[39m[22m [1m[32m88:17-23[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m[1m[31m in [39m[22m[1m[36mC:\Projects\GitHub\preact\components\preact\src\Particles.tsx(88,18)[39m[22m
+[1m[31m      TS2686: 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.[39m[22m
+ts-loader-default_e3b0c44298fc1c14
+ @ ./src/index.ts 29:0-36 46:15-24 47:0-42
+
+webpack 5.106.0 compiled with [1m[31m2 errors[39m[22m in 4797 ms
+
+assets by status 14.1 KiB [1m[32m[cached][39m[22m 1 asset
+orphan modules 14.3 KiB [1m[33m[orphan][39m[22m 14 modules
+runtime modules 937 bytes 4 modules
+built modules 26.5 KiB [1m[33m[built][39m[22m
+  modules by path [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/[39m[22m 10.8 KiB
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/regen...(truncated)[39m[22m 448 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 2.46 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 170 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 3.73 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 352 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 367 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 1.07 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    + 4 modules
+  [1m./src/index.ts + 14 modules[39m[22m 15.7 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1mexternal {"commonjs":"@tsparticles/engine","commonjs2":"@tsparticles/engine","am...(truncated)[39m[22m 42 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1mexternal "preact/compat"[39m[22m 42 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+
+[1m[31mERROR[39m[22m in [1mC:\Projects\GitHub\preact\components\preact\src\Particles.tsx[39m[22m
+[1m./src/Particles.tsx[39m[22m [1m[32m87:13-16[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m[1m[31m in [39m[22m[1m[36mC:\Projects\GitHub\preact\components\preact\src\Particles.tsx(87,14)[39m[22m
+[1m[31m      TS2686: 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.[39m[22m
+ts-loader-default_e3b0c44298fc1c14
+ @ ./src/index.ts 29:0-36 46:15-24 47:0-42
+
+[1m[31mERROR[39m[22m in [1mC:\Projects\GitHub\preact\components\preact\src\Particles.tsx[39m[22m
+[1m./src/Particles.tsx[39m[22m [1m[32m88:17-23[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m[1m[31m in [39m[22m[1m[36mC:\Projects\GitHub\preact\components\preact\src\Particles.tsx(88,18)[39m[22m
+[1m[31m      TS2686: 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.[39m[22m
+ts-loader-default_e3b0c44298fc1c14
+ @ ./src/index.ts 29:0-36 46:15-24 47:0-42
+
+webpack 5.106.0 compiled with [1m[31m2 errors[39m[22m in 4737 ms
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m

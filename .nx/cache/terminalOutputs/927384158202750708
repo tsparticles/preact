@@ -1,0 +1,60 @@
+
+> @tsparticles/preact@3.0.0 build:ci C:\Projects\GitHub\preact\components\preact
+> pnpm run prettify:ci:src && pnpm run lint:ci && cross-env NODE_ENV=production webpack && pnpm run prettify:ci:readme
+
+
+> @tsparticles/preact@3.0.0 prettify:ci:src C:\Projects\GitHub\preact\components\preact
+> prettier --check ./src/*
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> @tsparticles/preact@3.0.0 lint:ci C:\Projects\GitHub\preact\components\preact
+> eslint src --ext .js,.jsx,.ts,.tsx
+
+[1mWebpack Bundle Analyzer[22m saved report to [1mC:\Projects\GitHub\preact\components\preact\report.html[22m
+[1mWebpack Bundle Analyzer[22m saved report to [1mC:\Projects\GitHub\preact\components\preact\report.html[22m
+asset [1m[32mparticles.js[39m[22m 13.8 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (name: main) 1 related asset
+orphan modules 14.5 KiB [1m[33m[orphan][39m[22m 17 modules
+runtime modules 937 bytes 4 modules
+built modules 26.6 KiB [1m[33m[built][39m[22m
+  modules by path [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtim...(truncated)[39m[22m 10.3 KiB
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 2.46 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 170 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 3.73 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 352 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 367 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 1.07 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 349 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 638 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    + 2 modules
+  [1m./src/index.ts + 17 modules[39m[22m 15.9 KiB [1m[31m[not cacheable][39m[22m [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/regen...(truncated)[39m[22m 448 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.106.0 compiled [1m[32msuccessfully[39m[22m in 4642 ms
+
+asset [1m[32mparticles.js[39m[22m 14.3 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (name: main) 1 related asset
+orphan modules 14.3 KiB [1m[33m[orphan][39m[22m 14 modules
+runtime modules 937 bytes 4 modules
+built modules 26.6 KiB [1m[33m[built][39m[22m
+  modules by path [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/[39m[22m 10.8 KiB
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/regen...(truncated)[39m[22m 448 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 2.46 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 170 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 3.73 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/@babel+runtime@7.29.2/node_modules/@babel/runtime/helpe...(truncated)[39m[22m 352 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    + 6 modules
+  modules by path [1mexternal "preact/[39m[22m 84 bytes
+    [1mexternal "preact/jsx-runtime"[39m[22m 42 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1mexternal "preact/compat"[39m[22m 42 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m./src/index.ts + 14 modules[39m[22m 15.7 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1mexternal {"commonjs":"@tsparticles/engine","commonjs2":"@tsparticles/engine","am...(truncated)[39m[22m 42 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.106.0 compiled [1m[32msuccessfully[39m[22m in 4715 ms
+
+> @tsparticles/preact@3.0.0 prettify:ci:readme C:\Projects\GitHub\preact\components\preact
+> prettier --check ./README.md
+
+Checking formatting...
+[[33mwarn[39m] README.md
+[[33mwarn[39m] Code style issues found in the above file. Run Prettier with --write to fix.
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m
